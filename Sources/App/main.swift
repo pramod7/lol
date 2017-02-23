@@ -2,10 +2,10 @@ import Vapor
 
 let drop = Droplet()
 
-// simply print message on chrome page
-//drop.get("NewWebAPI") { request in
-//    return "Hello, Google Chrome!"
-//}
+ //simply print message on chrome page
+drop.get("NewWebAPI") { request in
+    return "Hello, Google Chrome!"
+}
 
 // simply pass parameter value
 //drop.get("/name",":name") { request in
@@ -20,11 +20,11 @@ let drop = Droplet()
 //    return try drop.view.make("contactus.html")
 //}
 
-drop.get("template") { request in
-    return try drop.view.make("welcome", [
-        "message": "Hello, world!"
-        ])
-}
+//drop.get("template") { request in
+//    return try drop.view.make("welcome", [
+//        "message": "Hello, world!"
+//        ])
+//}
 
 drop.resource("posts", PostController())
 
